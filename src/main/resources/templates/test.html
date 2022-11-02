@@ -6,101 +6,141 @@
     <title>Bootstrap demo</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link href="https://cdn.lineicons.com/3.0/lineicons.css" rel="stylesheet">
     <style>
-        body {
-            overflow: hidden;
-            height: 100vh;
-        }
-        main {
-            overflow-y: auto;
-        }
-        ul {
-            list-style: none;
-        }
-        li {
-            color: #fff;
-        }
-        aside {
-            border-right:  1px solid #ededed;
-            background: #36c;
-            flex: 1 0 10%;
-            padding: 1rem;
-        }
-        .wrapper {
-            display: flex;
+        .sidenav {
             height: 100%;
+            width: 250px;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: darkblue;
+            overflow-x: hidden;
+            padding-top: 60px;
+            transition: 0.5s;
         }
-        @media (max-width: 500px) {
-            .wrapper {
-                flex-direction: column-reverse;
-            }
-            ul {
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-            }
+        .sidenav a {
+            padding: 8px 8px 8px 32px;
+            text-decoration: none;
+            font-size: 25px;
+            color: #818181;
+            display: block;
+            transition: 0.3s;
+        }
+        .sidenav .closebtn {
+            position: absolute;
+            top: 0;
+            right: 25px;
+            font-size: 36px;
+            margin-left: 50px;
+        }
+        .behind {
+            z-index: 0;
+        }
+        .footer {
+            background-color: darkgreen;
+            color: white;
+            text-align: center;
+        }
 
-        }
-        .wrapper_inner {
-            width: 90%;
-            margin: 0px auto;
+        @media (max-width: 576px) {
+            .sidenav {
+                width: 0px;
+            }
         }
     </style>
 </head>
 <body>
-<div class="wrapper" id="accordion">
-    <aside>
-        <ul class="sideNav">
-            <li id="headingOne"><a data-bs-toggle="collapse" href="#groupcollapse1" role="button" aria-expanded="true" aria-controls="groupcollapse1">Group 1</a></li>
-            <li id="headingTwo"><a data-bs-toggle="collapse" href="#groupcollapse2" role="button" aria-expanded="false" aria-controls="groupcollapse2">Group 2</a></li>
-            <li>Item</li>
-            <li>Item</li>
-        </ul>
-    </aside>
-    <main>
-        <div class="wrapper_inner" >
-            <p class="collapse show" aria-labelledby="headingOne" data-bs-parent="#accordion" id="groupcollapse1">
-                Non enim praesent elementum facilisis. Facilisis volutpat est velit egestas dui id ornare. Lobortis mattis aliquam faucibus purus. Volutpat consequat mauris nunc congue nisi vitae. Quis auctor elit sed vulputate. Nisl nisi scelerisque eu ultrices vitae auctor eu. Imperdiet sed euismod nisi porta lorem. Sed faucibus turpis in eu mi bibendum neque. Id eu nisl nunc mi. At erat pellentesque adipiscing commodo elit at imperdiet dui accumsan.
+<!--sidenav-->
+<div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+</div>
+<!--main content-->
+<div class="container mt-2 mb-5">
+    <div class="row">
+        <h2>List 1</h2>
+        <table class="table table-dark table-hover">
+            <thead>
+            <tr>
+                <th>Tasks</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td><span style="cursor: pointer">&#9634;</span> Task 1</td>
+            </tr>
+            <tr>
+                <td><span style="cursor: pointer">&#9634;</span> Task 2</td>
+            </tr>
+            <tr>
+                <td><span style="cursor: pointer">&#9634;</span> Task 3</td>
+            </tr>
+            <tr>
+                <td><span style="cursor: pointer">&#9634;</span> Task 4</td>
+            </tr>
+            </tbody>
+        </table>
+        <h2>List 2</h2>
+        <table class="table table-dark table-hover">
+            <thead>
+            <tr>
+                <th>Tasks</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td><span style="cursor: pointer">&#9634;</span> Task 1</td>
+            </tr>
+            <tr>
+                <td><span style="cursor: pointer">&#9634;</span> Task 2</td>
+            </tr>
+            <tr>
+                <td><span style="cursor: pointer">&#9634;</span> Task 3</td>
+            </tr>
+            <tr>
+                <td><span style="cursor: pointer">&#9634;</span> Task 4</td>
+            </tr>
+            </tbody>
+        </table>
+        <h2>List 3</h2>
+        <table class="table table-dark table-hover">
+            <thead>
+            <tr>
+                <th>Tasks</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td><span style="cursor: pointer">&#9634;</span> Task 1</td>
+            </tr>
+            <tr>
+                <td><span style="cursor: pointer">&#9634;</span> Task 2</td>
+            </tr>
+            <tr>
+                <td><span style="cursor: pointer">&#9634;</span> Task 3</td>
+            </tr>
+            <tr>
+                <td><span style="cursor: pointer">&#9634;</span> Task 4</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
 
-                Sed ullamcorper morbi tincidunt ornare massa eget egestas purus. Facilisis mauris sit amet massa vitae. Mauris a diam maecenas sed enim ut sem. Libero id faucibus nisl tincidunt. Et malesuada fames ac turpis egestas maecenas pharetra convallis. Adipiscing enim eu turpis egestas pretium aenean pharetra magna ac. Nec feugiat in fermentum posuere urna nec tincidunt praesent semper. Integer enim neque volutpat ac. Mi in nulla posuere sollicitudin aliquam ultrices sagittis. Ullamcorper a lacus vestibulum sed arcu non odio euismod lacinia. Dolor sed viverra ipsum nunc aliquet bibendum. Nunc vel risus commodo viverra maecenas. Id velit ut tortor pretium viverra suspendisse potenti nullam. Maecenas sed enim ut sem viverra aliquet. Faucibus turpis in eu mi bibendum neque egestas congue. Cras tincidunt lobortis feugiat vivamus at augue eget arcu. Mattis nunc sed blandit libero. Quam pellentesque nec nam aliquam sem et tortor.
-                Sed ullamcorper morbi tincidunt ornare massa eget egestas purus. Facilisis mauris sit amet massa vitae. Mauris a diam maecenas sed enim ut sem. Libero id faucibus nisl tincidunt. Et malesuada fames ac turpis egestas maecenas pharetra convallis. Adipiscing enim eu turpis egestas pretium aenean pharetra magna ac. Nec feugiat in fermentum posuere urna nec tincidunt praesent semper. Integer enim neque volutpat ac. Mi in nulla posuere sollicitudin aliquam ultrices sagittis. Ullamcorper a lacus vestibulum sed arcu non odio euismod lacinia. Dolor sed viverra ipsum nunc aliquet bibendum. Nunc vel risus commodo viverra maecenas. Id velit ut tortor pretium viverra suspendisse potenti nullam. Maecenas sed enim ut sem viverra aliquet. Faucibus turpis in eu mi bibendum neque egestas congue. Cras tincidunt lobortis feugiat vivamus at augue eget arcu. Mattis nunc sed blandit libero. Quam pellentesque nec nam aliquam sem et tortor.
-                Sed ullamcorper morbi tincidunt ornare massa eget egestas purus. Facilisis mauris sit amet massa vitae. Mauris a diam maecenas sed enim ut sem. Libero id faucibus nisl tincidunt. Et malesuada fames ac turpis egestas maecenas pharetra convallis. Adipiscing enim eu turpis egestas pretium aenean pharetra magna ac. Nec feugiat in fermentum posuere urna nec tincidunt praesent semper. Integer enim neque volutpat ac. Mi in nulla posuere sollicitudin aliquam ultrices sagittis. Ullamcorper a lacus vestibulum sed arcu non odio euismod lacinia. Dolor sed viverra ipsum nunc aliquet bibendum. Nunc vel risus commodo viverra maecenas. Id velit ut tortor pretium viverra suspendisse potenti nullam. Maecenas sed enim ut sem viverra aliquet. Faucibus turpis in eu mi bibendum neque egestas congue. Cras tincidunt lobortis feugiat vivamus at augue eget arcu. Mattis nunc sed blandit libero. Quam pellentesque nec nam aliquam sem et tortor.
-                Sed ullamcorper morbi tincidunt ornare massa eget egestas purus. Facilisis mauris sit amet massa vitae. Mauris a diam maecenas sed enim ut sem. Libero id faucibus nisl tincidunt. Et malesuada fames ac turpis egestas maecenas pharetra convallis. Adipiscing enim eu turpis egestas pretium aenean pharetra magna ac. Nec feugiat in fermentum posuere urna nec tincidunt praesent semper. Integer enim neque volutpat ac. Mi in nulla posuere sollicitudin aliquam ultrices sagittis. Ullamcorper a lacus vestibulum sed arcu non odio euismod lacinia. Dolor sed viverra ipsum nunc aliquet bibendum. Nunc vel risus commodo viverra maecenas. Id velit ut tortor pretium viverra suspendisse potenti nullam. Maecenas sed enim ut sem viverra aliquet. Faucibus turpis in eu mi bibendum neque egestas congue. Cras tincidunt lobortis feugiat vivamus at augue eget arcu. Mattis nunc sed blandit libero. Quam pellentesque nec nam aliquam sem et tortor.
-            </p>
-            <p class="collapse" aria-labelledby="headingTwo" data-bs-parent="#accordion" id="groupcollapse2">
-                Sed ullamcorper morbi tincidunt ornare massa eget egestas purus. Facilisis mauris sit amet massa vitae. Mauris a diam maecenas sed enim ut sem. Libero id faucibus nisl tincidunt. Et malesuada fames ac turpis egestas maecenas pharetra convallis. Adipiscing enim eu turpis egestas pretium aenean pharetra magna ac. Nec feugiat in fermentum posuere urna nec tincidunt praesent semper. Integer enim neque volutpat ac. Mi in nulla posuere sollicitudin aliquam ultrices sagittis. Ullamcorper a lacus vestibulum sed arcu non odio euismod lacinia. Dolor sed viverra ipsum nunc aliquet bibendum. Nunc vel risus commodo viverra maecenas. Id velit ut tortor pretium viverra suspendisse potenti nullam. Maecenas sed enim ut sem viverra aliquet. Faucibus turpis in eu mi bibendum neque egestas congue. Cras tincidunt lobortis feugiat vivamus at augue eget arcu. Mattis nunc sed blandit libero. Quam pellentesque nec nam aliquam sem et tortor.
-                Sed ullamcorper morbi tincidunt ornare massa eget egestas purus. Facilisis mauris sit amet massa vitae. Mauris a diam maecenas sed enim ut sem. Libero id faucibus nisl tincidunt. Et malesuada fames ac turpis egestas maecenas pharetra convallis. Adipiscing enim eu turpis egestas pretium aenean pharetra magna ac. Nec feugiat in fermentum posuere urna nec tincidunt praesent semper. Integer enim neque volutpat ac. Mi in nulla posuere sollicitudin aliquam ultrices sagittis. Ullamcorper a lacus vestibulum sed arcu non odio euismod lacinia. Dolor sed viverra ipsum nunc aliquet bibendum. Nunc vel risus commodo viverra maecenas. Id velit ut tortor pretium viverra suspendisse potenti nullam. Maecenas sed enim ut sem viverra aliquet. Faucibus turpis in eu mi bibendum neque egestas congue. Cras tincidunt lobortis feugiat vivamus at augue eget arcu. Mattis nunc sed blandit libero. Quam pellentesque nec nam aliquam sem et tortor.
-                Sed ullamcorper morbi tincidunt ornare massa eget egestas purus. Facilisis mauris sit amet massa vitae. Mauris a diam maecenas sed enim ut sem. Libero id faucibus nisl tincidunt. Et malesuada fames ac turpis egestas maecenas pharetra convallis. Adipiscing enim eu turpis egestas pretium aenean pharetra magna ac. Nec feugiat in fermentum posuere urna nec tincidunt praesent semper. Integer enim neque volutpat ac. Mi in nulla posuere sollicitudin aliquam ultrices sagittis. Ullamcorper a lacus vestibulum sed arcu non odio euismod lacinia. Dolor sed viverra ipsum nunc aliquet bibendum. Nunc vel risus commodo viverra maecenas. Id velit ut tortor pretium viverra suspendisse potenti nullam. Maecenas sed enim ut sem viverra aliquet. Faucibus turpis in eu mi bibendum neque egestas congue. Cras tincidunt lobortis feugiat vivamus at augue eget arcu. Mattis nunc sed blandit libero. Quam pellentesque nec nam aliquam sem et tortor.
-                Sed ullamcorper morbi tincidunt ornare massa eget egestas purus. Facilisis mauris sit amet massa vitae. Mauris a diam maecenas sed enim ut sem. Libero id faucibus nisl tincidunt. Et malesuada fames ac turpis egestas maecenas pharetra convallis. Adipiscing enim eu turpis egestas pretium aenean pharetra magna ac. Nec feugiat in fermentum posuere urna nec tincidunt praesent semper. Integer enim neque volutpat ac. Mi in nulla posuere sollicitudin aliquam ultrices sagittis. Ullamcorper a lacus vestibulum sed arcu non odio euismod lacinia. Dolor sed viverra ipsum nunc aliquet bibendum. Nunc vel risus commodo viverra maecenas. Id velit ut tortor pretium viverra suspendisse potenti nullam. Maecenas sed enim ut sem viverra aliquet. Faucibus turpis in eu mi bibendum neque egestas congue. Cras tincidunt lobortis feugiat vivamus at augue eget arcu. Mattis nunc sed blandit libero. Quam pellentesque nec nam aliquam sem et tortor.
-            </p>
+
+</div>
+<div class="container fixed-bottom behind">
+    <div class="row">
+        <div class="footer pt-2">
+            <p>Add a task</p>
         </div>
-    </main>
+    </div>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
         crossorigin="anonymous"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script>
-    $(document).ready(function (){
-        function enableDisable(navItem) {
-            if (navItem.attr('aria-expanded') === 'true'){
-                navItem.css('text-decoration', 'none')
-                navItem.css('pointer-events', 'none')
-            } else {
-                navItem.css('text-decoration', 'underline')
-                navItem.css('pointer-events', '')
-            }
-        }
-        $('.sideNav li a').each(function (){
-            enableDisable($(this))
-        })
-        $('.sideNav li a').click(function (){
-            $('.sideNav li a').each(function (){
-                enableDisable($(this))
-            })
-        })
-    });
-</script>
+
 </body>
 </html>
