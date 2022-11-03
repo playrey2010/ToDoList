@@ -37,6 +37,10 @@
             margin-left: 50px;
         }
         /*bigger sidenav*/
+        .bigSideNavCollapsed {
+            width: 0%;
+            transition: 0.3s;
+        }
         #bigSideNav {
             width: 100%;
             height: 100%;
@@ -92,13 +96,13 @@
 
 <div class="container-fluid">
     <div class="row">
-        <div class="col-3 gx-0">
+        <div class="col-3 gx-0" id="bigSideNavColumn">
             <div id="bigSideNav">
                 <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
             </div>
         </div>
         <div class="col">
-            <div class="container mt-2 mb-5">
+            <div class="container mt-2 mb-5" style="min-height: 100vh!important;">
                 <div class="row">
                     <h2>List 1</h2>
                     <table class="table table-dark table-hover">
@@ -188,6 +192,13 @@
         integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
         crossorigin="anonymous"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+    $(document).ready(function (){
+        $('.closebtn').click(function (){
+            $('#bigSideNavColumn').addClass('bigSideNavCollapsed')
+        })
+    })
+</script>
 
 </body>
 </html>
